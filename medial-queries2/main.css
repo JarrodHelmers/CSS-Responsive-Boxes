@@ -1,73 +1,65 @@
-body {
-  background: papayawhip;
-}
-
 * {
-  border: 1px solid teal;
-  box-sizing: border-box;
+  border: 1px solid red;
 }
 
 .container {
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
 }
 
-.wrapper {
+.a {
+  width: 100vw;
+  height: 30vh;
+}
+
+.main {
   display: flex;
+  width: 60vw;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  flex-direction: column;
-  flex-grow: 3;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 70vh;
 }
 
-header, footer, aside, .wrapper  {
-  flex-grow: 1;
-  margin: .5em;
-  max-height: 10vh;
+.b {
+  width: 60vw;
+  height: 30vh;
 }
 
-aside  {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  min-height: 20vh;
+.c,
+.d,
+.e {
+  align-self: flex-start;
 
+  width: 15vw;
+  height: 30vh;
 }
 
-aside > div {
-  flex-grow: 10;
-  margin: .5em;
-  /* min-width: 20vh; */
+.f {
+  width: 30vw;
+  height: 60vh;
 }
 
-main {
-  width: 90%;
-  flex-grow: 3;
-  margin: .5em;
-}
-
-
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   .container {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
-  header {
+
+  .main {
     width: 100%;
-    max-height: 10vh;
   }
-  .wrapper {
-    justify-content: stretch;
-    flex-basis: 70%;
-      min-height:  80vh;
+
+  .b {
+    width: 100%;
   }
-  footer {
-    margin: .5em;
-    flex-grow: 3;
-    min-height:  80vh;
+
+  .c,
+  .d,
+  .e {
+    flex: 3;
+  }
+
+  .f {
+    width: 100%;
   }
 }
